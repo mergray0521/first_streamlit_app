@@ -34,13 +34,13 @@ streamlit.write('The user entered ', fruit_choice)
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
-streamlit.stop()
-
 
 #take the json version of data and normalize it
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # output to the screen as a table
 streamlit.dataframe(fruityvice_normalized)
+
+streamlit.stop()
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
