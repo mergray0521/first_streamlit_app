@@ -29,7 +29,7 @@ streamlit.write('The user entered ', fruit_choice)
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
-
+streamlit.stop()
 import snowflake.connector
 
 #take the json version of data and normalize it
