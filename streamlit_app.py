@@ -30,6 +30,8 @@ import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
 
+import snowflake.connector
+
 #take the json version of data and normalize it
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # output to the screen as a table
